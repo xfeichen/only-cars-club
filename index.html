@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Only Cars Club</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="antialiased bg-slate-950">
+    <header class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border-b-4 border-red-600 sticky top-0 z-50 shadow-2xl">
+        <div class="max-w-7xl mx-auto px-4 py-5">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center gap-3">
+                    <img src="images/logo-only.png" alt="ONLY CARS CLUB" class="h-14 w-auto object-contain transition-transform hover:scale-105 drop-shadow-lg">
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex gap-2 items-center">
+                    <a href="index.html" class="nav-link px-4 py-2 rounded-lg bg-red-600 text-white flex items-center gap-2 transition-all font-bold">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    <a href="sobre.html" class="nav-link px-4 py-2 rounded-lg text-gray-300 hover:bg-red-600 flex items-center gap-2 transition-all font-bold">
+                        <i class="fas fa-users"></i>
+                        <span>Sobre Nós</span>
+                    </a>
+                    <a href="parceiros.html" class="nav-link px-4 py-2 rounded-lg text-gray-300 hover:bg-red-600 flex items-center gap-2 transition-all font-bold">
+                        <i class="fas fa-handshake"></i>
+                        <span>Parceiros</span>
+                    </a>
+                    <a href="eventos.html" class="nav-link px-4 py-2 rounded-lg text-gray-300 hover:bg-red-600 flex items-center gap-2 transition-all font-bold">
+                        <i class="fas fa-calendar-days"></i>
+                        <span>Eventos</span>
+                    </a>
+                    <a href="contato.html" class="nav-link px-4 py-2 rounded-lg text-gray-300 hover:bg-red-600 flex items-center gap-2 transition-all font-bold">
+                        <i class="fas fa-headset"></i>
+                        <span>Contato</span>
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-red-500 text-2xl" id="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section Impactante -->
+        <section class="hero-video-container">
+            <video id="heroVideo" autoplay loop muted playsinline>
+                <source src="images/onlyxgear.mp4" type="video/mp4">
+                Seu navegador não suporta vídeos.
+            </video>
+            
+            <div class="hero-content-overlay fade-in">
+                <h1 class="text-6xl lg:text-7xl font-black mb-6 text-white drop-shadow-2xl" style="font-family: 'Oswald', sans-serif; letter-spacing: 4px;">
+                    ONLY
+                    <br>
+                    <span class="gradient-text text-7xl lg:text-8xl">CARS</span>
+                    <br>
+                    CLUB
+                </h1>
+                <p class="text-2xl lg:text-3xl text-gray-100 mb-8 font-bold drop-shadow-lg">
+                    Paixão. Velocidade. Comunidade.
+                </p>
+                <div class="flex flex-col md:flex-row gap-4 justify-center">
+                    <a href="sobre.html" class="btn-primary px-10 py-4 bg-red-600 text-white rounded-xl text-lg font-bold hover:bg-red-700 inline-flex items-center justify-center gap-2 shadow-2xl">
+                        <i class="fas fa-arrow-right"></i>
+                        Conheça o Clube
+                    </a>
+                    <a href="eventos.html" class="btn-primary px-10 py-4 bg-transparent border-3 border-red-500 text-red-400 rounded-xl text-lg font-bold hover:bg-red-600 hover:border-red-600 hover:text-white inline-flex items-center justify-center gap-2 shadow-xl">
+                        <i class="fas fa-fire"></i>
+                        Próximos Eventos
+                    </a>
+                </div>
+            </div>
+
+            <!-- Sound Toggle Button -->
+            <button id="soundToggleBtn" class="sound-toggle-btn">
+                <i id="soundIcon" class="fas"></i>
+            </button>
+        </section>
+
+        <!-- Seção de Destaque -->
+        <section class="py-32 px-4 md:px-8 max-w-7xl mx-auto relative">
+            <div class="text-center mb-20 fade-in">
+                <h2 class="section-title text-5xl md:text-6xl mb-6" style="font-family: 'Oswald', sans-serif; letter-spacing: 2px;">POR QUE ONLY?</h2>
+                <div class="divider"></div>
+                <p class="text-gray-300 text-xl max-w-3xl mx-auto font-semibold">
+                    Somos mais que um clube. Somos uma comunidade de apaixonados que vivem cada dia como uma reta.
+                </p>
+            </div>
+
+            <!-- Cards Impactantes -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="card-hover-effect md-card text-center scale-in group">
+                    <div class="mb-8 inline-block p-6 bg-gradient-to-br from-red-600 to-red-800 rounded-full group-hover:scale-110 transition-transform">
+                        <i class="fas fa-road text-5xl text-white"></i>
+                    </div>
+                    <h3 class="text-3xl font-black text-red-500 mb-4" style="font-family: 'Oswald', sans-serif;">PERFORMANCE</h3>
+                    <p class="text-gray-400 text-lg leading-relaxed">
+                        Eventos de alta performance em circuitos profissionais. Onde a velocidade encontra a precisão.
+                    </p>
+                    <div class="mt-6 inline-block px-6 py-2 bg-red-600 bg-opacity-20 rounded-full border border-red-600 text-red-400 font-bold text-sm">
+                        ADRENALINA 100%
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card-hover-effect md-card text-center scale-in group">
+                    <div class="mb-8 inline-block p-6 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full group-hover:scale-110 transition-transform">
+                        <i class="fas fa-people-group text-5xl text-white"></i>
+                    </div>
+                    <h3 class="text-3xl font-black text-blue-400 mb-4" style="font-family: 'Oswald', sans-serif;">COMUNIDADE</h3>
+                    <p class="text-gray-400 text-lg leading-relaxed">
+                        Conecte-se com verdadeiros apaixonados por carros. Faça amizades que transcendem a garagem.
+                    </p>
+                    <div class="mt-6 inline-block px-6 py-2 bg-blue-600 bg-opacity-20 rounded-full border border-blue-600 text-blue-400 font-bold text-sm">
+                        FAMÍLIA REAL
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card-hover-effect md-card text-center scale-in group">
+                    <div class="mb-8 inline-block p-6 bg-gradient-to-br from-purple-600 to-purple-800 rounded-full group-hover:scale-110 transition-transform">
+                        <i class="fas fa-crown text-5xl text-white"></i>
+                    </div>
+                    <h3 class="text-3xl font-black text-purple-400 mb-4" style="font-family: 'Oswald', sans-serif;">EXCLUSIVIDADE</h3>
+                    <p class="text-gray-400 text-lg leading-relaxed">
+                        Acesso VIP a eventos, lançamentos e experiências que poucos alcançam. Privilégio garantido.
+                    </p>
+                    <div class="mt-6 inline-block px-6 py-2 bg-purple-600 bg-opacity-20 rounded-full border border-purple-600 text-purple-400 font-bold text-sm">
+                        ELITE 🏆
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Secção CTA Impactante -->
+        <section class="py-32 px-4 relative overflow-hidden">
+            <div class="absolute inset-0 opacity-5">
+                <div class="absolute top-0 left-0 w-96 h-96 bg-red-600 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-0 right-0 w-96 h-96 bg-blue-600 rounded-full blur-3xl"></div>
+            </div>
+            <div class="max-w-5xl mx-auto text-center relative z-10">
+                <h2 class="text-5xl md:text-6xl font-black text-white mb-8" style="font-family: 'Oswald', sans-serif; letter-spacing: 2px;">
+                    ACELERAÇÃO GARANTIDA
+                </h2>
+                <p class="text-2xl text-gray-200 mb-12 font-semibold">
+                    Cada evento é uma oportunidade de viver. Cada membro é uma história. Qual será a sua?
+                </p>
+                <div class="flex flex-col md:flex-row gap-6 justify-center">
+                    <a href="eventos.html" class="btn-primary px-12 py-5 bg-red-600 text-white rounded-xl text-xl font-black hover:bg-red-700 inline-flex items-center justify-center gap-3 shadow-2xl">
+                        <i class="fas fa-bolt"></i>
+                        Ver Eventos
+                    </a>
+                    <a href="contato.html" class="btn-primary px-12 py-5 bg-white text-red-600 rounded-xl text-xl font-black hover:bg-gray-100 inline-flex items-center justify-center gap-3 shadow-2xl">
+                        <i class="fas fa-envelope"></i>
+                        Fale Conosco
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Instagram Gallery -->
+        <section class="py-32 px-4 md:px-8 max-w-7xl mx-auto">
+            <div class="text-center mb-20 fade-in">
+                <h2 class="section-title text-5xl md:text-6xl mb-6" style="font-family: 'Oswald', sans-serif; letter-spacing: 2px;">VEJA NOSSOS MOMENTOS</h2>
+                <div class="divider"></div>
+                <p class="text-gray-300 text-xl">Siga @onlycars.club para conteúdo exclusivo</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 scale-in">
+                <a href="https://www.instagram.com/onlycars.club/" target="_blank" class="block aspect-square overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition duration-500 border-2 border-red-600 border-opacity-30 hover:border-opacity-100">
+                    <img src="images/insta-1.png" alt="Post do Instagram 1" class="w-full h-full object-cover transform hover:scale-110 transition duration-500">
+                </a>
+                <a href="https://www.instagram.com/onlycars.club/" target="_blank" class="block aspect-square overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition duration-500 border-2 border-red-600 border-opacity-30 hover:border-opacity-100">
+                    <img src="images/insta-2.png" alt="Post do Instagram 2" class="w-full h-full object-cover transform hover:scale-110 transition duration-500">
+                </a>
+                <a href="https://www.instagram.com/onlycars.club/" target="_blank" class="block aspect-square overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition duration-500 border-2 border-red-600 border-opacity-30 hover:border-opacity-100">
+                    <img src="images/insta-3.png" alt="Post do Instagram 3" class="w-full h-full object-cover transform hover:scale-110 transition duration-500">
+                </a>
+                <a href="https://www.instagram.com/onlycars.club/" target="_blank" class="block aspect-square overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition duration-500 border-2 border-red-600 border-opacity-30 hover:border-opacity-100">
+                    <img src="images/insta-4.png" alt="Post do Instagram 4" class="w-full h-full object-cover transform hover:scale-110 transition duration-500">
+                </a>
+                <a href="https://www.instagram.com/onlycars.club/" target="_blank" class="block aspect-square overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition duration-500 border-2 border-red-600 border-opacity-30 hover:border-opacity-100">
+                    <img src="images/insta-5.png" alt="Post do Instagram 5" class="w-full h-full object-cover transform hover:scale-110 transition duration-500">
+                </a>
+            </div>
+
+            <div class="mt-16 text-center">
+                <a href="https://instagram.com/onlycars.club" target="_blank" class="btn-primary inline-flex items-center gap-3 px-10 py-4 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-xl text-lg font-bold hover:from-red-700 hover:to-red-800 shadow-2xl">
+                    <i class="fab fa-instagram text-2xl"></i>
+                    Seguir no Instagram
+                </a>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="py-32 px-4 md:px-8 bg-gradient-to-r from-red-900 via-red-800 to-red-900 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent opacity-50"></div>
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-5xl md:text-6xl font-black text-white mb-8" style="font-family: 'Oswald', sans-serif; letter-spacing: 2px;">
+                    JUNTE-SE À ELITE
+                </h2>
+                <p class="text-2xl text-gray-100 mb-12 font-semibold leading-relaxed">
+                    Somos procurando por quem REALMENTE ama carros. Gente real. Paixão real. Comunidade real.
+                </p>
+                <a href="https://chat.whatsapp.com/Da79r4k9ZhcBXBv0TxAGNg" target="_blank" class="btn-primary inline-flex items-center justify-center gap-3 px-14 py-6 bg-white text-red-600 rounded-2xl text-2xl font-black hover:bg-gray-100 shadow-2xl">
+                    <i class="fab fa-whatsapp"></i>
+                    ENTRAR NO CLUBE AGORA
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border-t-4 border-red-600 text-gray-400 py-20 px-4 md:px-8">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+            <!-- Logo Column -->
+            <div class="text-center md:text-left">
+                <img src="images/logo-only.png" alt="ONLY CARS CLUB" class="h-16 w-auto mb-4 mx-auto md:mx-0">
+                <p class="text-sm text-gray-500">A comunidade dos verdadeiros apaixonados por automóveis.</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h4 class="text-white font-bold mb-6 text-red-500 text-lg" style="font-family: 'Oswald', sans-serif; letter-spacing: 1px;">NAVEGAÇÃO</h4>
+                <ul class="space-y-3">
+                    <li><a href="index.html" class="hover:text-red-500 transition-colors font-semibold">Home</a></li>
+                    <li><a href="sobre.html" class="hover:text-red-500 transition-colors font-semibold">Sobre Nós</a></li>
+                    <li><a href="parceiros.html" class="hover:text-red-500 transition-colors font-semibold">Parceiros</a></li>
+                    <li><a href="eventos.html" class="hover:text-red-500 transition-colors font-semibold">Eventos</a></li>
+                </ul>
+            </div>
+
+            <!-- Social Links -->
+            <div>
+                <h4 class="text-white font-bold mb-6 text-red-500 text-lg" style="font-family: 'Oswald', sans-serif; letter-spacing: 1px;">CONECTE-SE</h4>
+                <div class="flex gap-4">
+                    <a href="https://www.instagram.com/onlycars.club/" target="_blank" class="p-3 bg-red-600 rounded-full text-white hover:bg-red-700 transition-colors inline-flex items-center justify-center shadow-lg">
+                        <i class="fab fa-instagram text-lg"></i>
+                    </a>
+                    <a href="#" class="p-3 bg-red-600 rounded-full text-white hover:bg-red-700 transition-colors inline-flex items-center justify-center shadow-lg">
+                        <i class="fab fa-facebook text-lg"></i>
+                    </a>
+                    <a href="#" class="p-3 bg-red-600 rounded-full text-white hover:bg-red-700 transition-colors inline-flex items-center justify-center shadow-lg">
+                        <i class="fab fa-youtube text-lg"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Contact -->
+            <div>
+                <h4 class="text-white font-bold mb-6 text-red-500 text-lg" style="font-family: 'Oswald', sans-serif; letter-spacing: 1px;">CONTATO</h4>
+                <ul class="space-y-3">
+                    <li class="flex items-center gap-2"><i class="fas fa-phone text-red-500"></i> <span class="font-semibold">(11) 9999-9999</span></li>
+                    <li class="flex items-center gap-2"><i class="fas fa-envelope text-red-500"></i> <span class="font-semibold">contato@only.com</span></li>
+                    <li class="flex items-center gap-2"><i class="fas fa-map-marker-alt text-red-500"></i> <span class="font-semibold">São Paulo, SP</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Bottom Footer -->
+        <div class="border-t border-red-600 border-opacity-30 pt-8 text-center text-sm text-gray-500 font-semibold">
+            <p>&copy; 2025 Only Cars Club. Todos os direitos reservados. 🏁</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

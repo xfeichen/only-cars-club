@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parceiros - Only Cars Club</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 0.5rem;
+        }
+
+        .carousel-wrapper {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1080 / 1350;
+            overflow: hidden;
+        }
+
+        .carousel-track {
+            display: flex;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            height: 100%;
+            flex-shrink: 0;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .carousel-dot.active {
+            background-color: rgba(255, 255, 255, 1);
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s;
+            z-index: 20;
+        }
+
+        .carousel-btn:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .carousel-btn-prev {
+            left: 10px;
+        }
+
+        .carousel-btn-next {
+            right: 10px;
+        }
+    </style>
+</head>
+<body class="antialiased bg-slate-950">
+    <header class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border-b-4 border-red-600 sticky top-0 z-50 shadow-2xl">
+        <div class="max-w-7xl mx-auto px-4 py-5">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center gap-3">
+                    <img src="images/logo-only.png" alt="ONLY CARS CLUB" class="h-14 w-auto object-contain transition-transform hover:scale-105 drop-shadow-lg">
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex gap-2 items-center">
+                    <a href="index.html" class="nav-link px-4 py-2 rounded-lg text-gray-300 hover:bg-red-600 flex items-center gap-2 transition-all font-bold">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    <a href="sobre.html" class="nav-link px-4 py-2 rounded-lg text-gray-300 hover:bg-red-600 flex items-center gap-2 transition-all font-bold">
+                        <i class="fas fa-users"></i>
+                        <span>Sobre Nós</span>
+                    </a>
+                    <a href="parceiros.html" class="nav-link px-4 py-2 rounded-lg bg-red-600 text-white flex items-center gap-2 transition-all font-bold">
+                        <i class="fas fa-handshake"></i>
+                        <span>Parceiros</span>
+                    </a>
+                    <a href="eventos.html" class="nav-link px-4 py-2 rounded-lg text-gray-300 hover:bg-red-600 flex items-center gap-2 transition-all font-bold">
+                        <i class="fas fa-calendar-days"></i>
+                        <span>Eventos</span>
+                    </a>
+                    <a href="contato.html" class="nav-link px-4 py-2 rounded-lg text-gray-300 hover:bg-red-600 flex items-center gap-2 transition-all font-bold">
+                        <i class="fas fa-headset"></i>
+                        <span>Contato</span>
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-red-500 text-2xl" id="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative bg-cover bg-center min-h-96 flex items-center justify-center text-white overflow-hidden">
+            <div class="absolute inset-0">
+                <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-transparent to-slate-900 opacity-90"></div>
+                <img src="https://source.unsplash.com/1600x600/?fashion,streetwear" alt="Parceiros" class="w-full h-full object-cover filter brightness-50">
+            </div>
+            <div class="relative z-10 text-center fade-in px-4">
+                <h1 class="text-6xl md:text-7xl font-black mb-4" style="font-family: 'Oswald', sans-serif; letter-spacing: 3px;">
+                    PARCEIROS
+                </h1>
+                <div class="w-24 h-1 bg-gradient-to-r from-transparent via-red-600 to-transparent mx-auto mb-6"></div>
+                <p class="text-xl font-semibold text-gray-200 max-w-3xl mx-auto">Conexão de verdade com quem gosta de carro. Atitude, autenticidade e paixão.</p>
+            </div>
+        </section>
+
+        <!-- Gear Freak Apresentação -->
+        <section class="py-32 px-4 md:px-8 max-w-7xl mx-auto fade-in">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="scale-in">
+                    <img src="images/gear.png" alt="Loja Gear Freak" class="w-full rounded-2xl shadow-2xl border-2 border-red-600 border-opacity-30">
+                </div>
+                <div class="text-left">
+                    <h2 class="section-title text-5xl md:text-6xl mb-8" style="font-family: 'Oswald', sans-serif; letter-spacing: 2px;">GEAR FREAK</h2>
+                    <div class="divider mb-8"></div>
+                    <p class="text-lg text-gray-300 mb-6 leading-relaxed font-semibold">
+                        A Gear Freak é muito mais que uma loja de roupas. É um <span class="text-red-500">lifestyle</span> dedicado aos apaixonados por automobilismo. Com designs exclusivos que resgatam ícones da cultura automotiva.
+                    </p>
+                    <p class="text-lg text-gray-300 mb-8 leading-relaxed font-semibold">
+                        Nossa parceria reflete nossos valores: <span class="text-red-500 font-black">qualidade, estilo e autenticidade</span>. Juntos, celebramos a cultura automotiva através de peças exclusivas que trazem a essência do Only Cars Club.
+                    </p>
+                    <a href="https://www.gearfreak.com.br/" target="_blank" class="btn-primary inline-flex items-center gap-3 px-8 py-4 bg-red-600 text-white rounded-xl text-lg font-bold hover:bg-red-700 shadow-xl">
+                        <i class="fas fa-shopping-bag"></i>
+                        Visitar Gear Freak
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Produtos em Parceria -->
+        <section class="py-32 px-4 md:px-8 max-w-7xl mx-auto fade-in">
+            <div class="text-center mb-20">
+                <h2 class="section-title text-5xl md:text-6xl mb-8" style="font-family: 'Oswald', sans-serif; letter-spacing: 2px;">COLEÇÕES EXCLUSIVAS</h2>
+                <div class="divider mb-8"></div>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto font-semibold">
+                    Conheça as camisetas exclusivas Only Cars Club x Gear Freak que trazem o melhor da cultura automotiva em designs premium.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Camiseta 1 -->
+                    <div class="card-hover-effect md-card scale-in group overflow-hidden">
+                        <div class="carousel-container" data-carousel-id="0">
+                            <div class="carousel-wrapper">
+                                <div class="carousel-track">
+                                    <div class="carousel-item">
+                                        <img src="images/porsche1.jpeg" alt="Camiseta Porsche 911 Turbo - 1" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="images/porsche2.jpeg" alt="Camiseta Porsche 911 Turbo - 2" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="images/porsche3.jpeg" alt="Camiseta Porsche 911 Turbo - 3" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="images/porsche4.jpeg" alt="Camiseta Porsche 911 Turbo - 4" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="images/porsche5.jpeg" alt="Camiseta Porsche 911 Turbo - 5" class="w-full h-full object-cover">
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-btn carousel-btn-prev"><i class="fas fa-chevron-left"></i></button>
+                            <button class="carousel-btn carousel-btn-next"><i class="fas fa-chevron-right"></i></button>
+                            <div class="carousel-nav">
+                                <span class="carousel-dot active" data-index="0"></span>
+                                <span class="carousel-dot" data-index="1"></span>
+                                <span class="carousel-dot" data-index="2"></span>
+                                <span class="carousel-dot" data-index="3"></span>
+                                <span class="carousel-dot" data-index="4"></span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-black text-red-500 mb-3" style="font-family: 'Oswald', sans-serif;">Porsche 911 Turbo</h3>
+                            <p class="text-gray-400 mb-4 font-semibold">Design clássico que homenageia um ícone. Estampa em cores off-white para um look sofisticado.</p>
+                            <a href="https://www.gearfreak.com.br/camiseta-regular-porsche-911-turbo-classic-off-white" target="_blank" class="btn-primary inline-flex items-center gap-2 px-6 py-2 bg-red-600 text-white rounded-lg text-sm font-bold hover:bg-red-700 transition-all">
+                                <i class="fas fa-external-link-alt"></i> Ver no Gear Freak
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Camiseta 2 -->
+                    <div class="card-hover-effect md-card scale-in group overflow-hidden">
+                        <div class="carousel-container" data-carousel-id="1">
+                            <div class="carousel-wrapper">
+                                <div class="carousel-track">
+                                    <div class="carousel-item">
+                                        <img src="images/honda1.jpeg" alt="Camiseta Marlboro Honda Racing - 1" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="images/honda2.jpeg" alt="Camiseta Marlboro Honda Racing - 2" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="images/honda3.jpeg" alt="Camiseta Marlboro Honda Racing - 3" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="images/honda4.jpeg" alt="Camiseta Marlboro Honda Racing - 4" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="images/honda5.jpeg" alt="Camiseta Marlboro Honda Racing - 5" class="w-full h-full object-cover">
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-btn carousel-btn-prev"><i class="fas fa-chevron-left"></i></button>
+                            <button class="carousel-btn carousel-btn-next"><i class="fas fa-chevron-right"></i></button>
+                            <div class="carousel-nav">
+                                <span class="carousel-dot active" data-index="0"></span>
+                                <span class="carousel-dot" data-index="1"></span>
+                                <span class="carousel-dot" data-index="2"></span>
+                                <span class="carousel-dot" data-index="3"></span>
+                                <span class="carousel-dot" data-index="4"></span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-black text-red-500 mb-3" style="font-family: 'Oswald', sans-serif;">Marlboro Honda Racing</h3>
+                            <p class="text-gray-400 mb-4 font-semibold">Vibrante em vermelho quente, celebra a lendária parceria Marlboro x Honda. Pura adrenalina em forma de design.</p>
+                            <a href="https://www.gearfreak.com.br/camiseta-regular-marlboro-honda-racing-vermelha" target="_blank" class="btn-primary inline-flex items-center gap-2 px-6 py-2 bg-red-600 text-white rounded-lg text-sm font-bold hover:bg-red-700 transition-all">
+                                <i class="fas fa-external-link-alt"></i> Ver no Gear Freak
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Camiseta 3 -->
+                    <div class="card-hover-effect md-card scale-in group overflow-hidden">
+                        <div class="carousel-container" data-carousel-id="2">
+                            <div class="carousel-wrapper">
+                                <div class="carousel-track">
+                                    <div class="carousel-item">
+                                        <img src="images/racers1.jpeg" alt="Camiseta By Racers For Racers - 1" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="images/racers2.jpeg" alt="Camiseta By Racers For Racers - 2" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="images/racers3.jpeg" alt="Camiseta By Racers For Racers - 3" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="images/racers4.jpeg" alt="Camiseta By Racers For Racers - 4" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="images/racers5.jpeg" alt="Camiseta By Racers For Racers - 5" class="w-full h-full object-cover">
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-btn carousel-btn-prev"><i class="fas fa-chevron-left"></i></button>
+                            <button class="carousel-btn carousel-btn-next"><i class="fas fa-chevron-right"></i></button>
+                            <div class="carousel-nav">
+                                <span class="carousel-dot active" data-index="0"></span>
+                                <span class="carousel-dot" data-index="1"></span>
+                                <span class="carousel-dot" data-index="2"></span>
+                                <span class="carousel-dot" data-index="3"></span>
+                                <span class="carousel-dot" data-index="4"></span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-black text-red-500 mb-3" style="font-family: 'Oswald', sans-serif;">By Racers For Racers</h3>
+                            <p class="text-gray-400 mb-4 font-semibold">A essência do motorsport em preto absoluto. Para quem vive e respira velocidade. Uma declaração de fé às pistas.</p>
+                            <a href="https://www.gearfreak.com.br/camiseta-regular-by-racers-for-racers-preto" target="_blank" class="btn-primary inline-flex items-center gap-2 px-6 py-2 bg-red-600 text-white rounded-lg text-sm font-bold hover:bg-red-700 transition-all">
+                                <i class="fas fa-external-link-alt"></i> Ver no Gear Freak
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Camiseta 4 -->
+                    <div class="card-hover-effect md-card scale-in group overflow-hidden">
+                        <div class="carousel-container" data-carousel-id="3">
+                            <div class="carousel-wrapper">
+                                <div class="carousel-track">
+                                    <div class="carousel-item">
+                                        <img src="images/bmw1.jpeg" alt="Camiseta BMW E36 - 1" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="images/bmw2.jpeg" alt="Camiseta BMW E36 - 2" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="images/bmw3.jpeg" alt="Camiseta BMW E36 - 3" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="images/bmw4.jpeg" alt="Camiseta BMW E36 - 4" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="images/bmw5.jpeg" alt="Camiseta BMW E36 - 5" class="w-full h-full object-cover">
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-btn carousel-btn-prev"><i class="fas fa-chevron-left"></i></button>
+                            <button class="carousel-btn carousel-btn-next"><i class="fas fa-chevron-right"></i></button>
+                            <div class="carousel-nav">
+                                <span class="carousel-dot active" data-index="0"></span>
+                                <span class="carousel-dot" data-index="1"></span>
+                                <span class="carousel-dot" data-index="2"></span>
+                                <span class="carousel-dot" data-index="3"></span>
+                                <span class="carousel-dot" data-index="4"></span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-black text-red-500 mb-3" style="font-family: 'Oswald', sans-serif;">BMW E36</h3>
+                            <p class="text-gray-400 mb-4 font-semibold">Homenagem ao icônico BMW E36, o queridinho dos tuners. Design elegante em off-white que passa estilo automotivo.</p>
+                            <a href="https://www.gearfreak.com.br/camiseta-regular-bmw-e36-off-white" target="_blank" class="btn-primary inline-flex items-center gap-2 px-6 py-2 bg-red-600 text-white rounded-lg text-sm font-bold hover:bg-red-700 transition-all">
+                                <i class="fas fa-external-link-alt"></i> Ver no Gear Freak
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Camiseta 5 -->
+                    <div class="card-hover-effect md-card scale-in group overflow-hidden">
+                        <div class="carousel-container" data-carousel-id="4">
+                            <div class="carousel-wrapper">
+                                <div class="carousel-track">
+                                    <div class="carousel-item">
+                                        <img src="images/hondaoff1.jpeg" alt="Camiseta Marlboro Honda Racing Off-White - 1" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="images/hondaoff2.jpeg" alt="Camiseta Marlboro Honda Racing Off-White - 2" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="images/hondaoff3.jpeg" alt="Camiseta Marlboro Honda Racing Off-White - 3" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="images/hondaoff4.jpeg" alt="Camiseta Marlboro Honda Racing Off-White - 4" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="images/honda2.jpeg" alt="Camiseta Marlboro Honda Racing Off-White - 5" class="w-full h-full object-cover">
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-btn carousel-btn-prev"><i class="fas fa-chevron-left"></i></button>
+                            <button class="carousel-btn carousel-btn-next"><i class="fas fa-chevron-right"></i></button>
+                            <div class="carousel-nav">
+                                <span class="carousel-dot active" data-index="0"></span>
+                                <span class="carousel-dot" data-index="1"></span>
+                                <span class="carousel-dot" data-index="2"></span>
+                                <span class="carousel-dot" data-index="3"></span>
+                                <span class="carousel-dot" data-index="4"></span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-black text-red-500 mb-3" style="font-family: 'Oswald', sans-serif;">Marlboro Honda Off-White</h3>
+                            <p class="text-gray-400 mb-4 font-semibold">A versão sofisticada do clássico Marlboro Honda. Em tons neutros, traz elegância sem perder a essência racing.</p>
+                            <a href="https://www.gearfreak.com.br/camiseta-regular-marlboro-honda-racing-Off-White-1-029" target="_blank" class="btn-primary inline-flex items-center gap-2 px-6 py-2 bg-red-600 text-white rounded-lg text-sm font-bold hover:bg-red-700 transition-all">
+                                <i class="fas fa-external-link-alt"></i> Ver no Gear Freak
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Camiseta 6 -->
+                    <div class="card-hover-effect md-card scale-in group overflow-hidden">
+                        <div class="carousel-container" data-carousel-id="5">
+                            <div class="carousel-wrapper">
+                                <div class="carousel-track">
+                                    <div class="carousel-item">
+                                        <img src="images/classica1.jpeg" alt="Camiseta Only Cars Club Japan - 1" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="images/classica2.jpeg" alt="Camiseta Only Cars Club Japan - 2" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="images/classica3.jpeg" alt="Camiseta Only Cars Club Japan - 3" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="images/classica4.jpeg" alt="Camiseta Only Cars Club Japan - 4" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="images/classica5.jpeg" alt="Camiseta Only Cars Club Japan - 5" class="w-full h-full object-cover">
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-btn carousel-btn-prev"><i class="fas fa-chevron-left"></i></button>
+                            <button class="carousel-btn carousel-btn-next"><i class="fas fa-chevron-right"></i></button>
+                            <div class="carousel-nav">
+                                <span class="carousel-dot active" data-index="0"></span>
+                                <span class="carousel-dot" data-index="1"></span>
+                                <span class="carousel-dot" data-index="2"></span>
+                                <span class="carousel-dot" data-index="3"></span>
+                                <span class="carousel-dot" data-index="4"></span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-black text-red-500 mb-3" style="font-family: 'Oswald', sans-serif;">Only Cars Club Japan</h3>
+                            <p class="text-gray-400 mb-4 font-semibold">A peça exclusiva que une Only Cars Club com a cultura automotiva japonesa. Preto puro, design minimalista e impacto máximo.</p>
+                            <a href="https://www.gearfreak.com.br/camiseta-regular-onlycarsclub-japan-preto" target="_blank" class="btn-primary inline-flex items-center gap-2 px-6 py-2 bg-red-600 text-white rounded-lg text-sm font-bold hover:bg-red-700 transition-all">
+                                <i class="fas fa-external-link-alt"></i> Ver no Gear Freak
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+            <!-- Logo Column -->
+            <div class="text-center md:text-left">
+                <img src="images/logo-only.png" alt="ONLY CARS CLUB" class="h-16 w-auto mb-4 mx-auto md:mx-0">
+                <p class="text-sm text-gray-500">A comunidade dos verdadeiros apaixonados por automóveis.</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h4 class="text-white font-bold mb-6 text-red-500 text-lg" style="font-family: 'Oswald', sans-serif; letter-spacing: 1px;">NAVEGAÇÃO</h4>
+                <ul class="space-y-3">
+                    <li><a href="index.html" class="hover:text-red-500 transition-colors font-semibold">Home</a></li>
+                    <li><a href="sobre.html" class="hover:text-red-500 transition-colors font-semibold">Sobre Nós</a></li>
+                    <li><a href="parceiros.html" class="hover:text-red-500 transition-colors font-semibold">Parceiros</a></li>
+                    <li><a href="eventos.html" class="hover:text-red-500 transition-colors font-semibold">Eventos</a></li>
+                </ul>
+            </div>
+
+            <!-- Social Links -->
+            <div>
+                <h4 class="text-white font-bold mb-6 text-red-500 text-lg" style="font-family: 'Oswald', sans-serif; letter-spacing: 1px;">CONECTE-SE</h4>
+                <div class="flex gap-4">
+                    <a href="https://www.instagram.com/onlycars.club/" target="_blank" class="p-3 bg-red-600 rounded-full text-white hover:bg-red-700 transition-colors inline-flex items-center justify-center shadow-lg">
+                        <i class="fab fa-instagram text-lg"></i>
+                    </a>
+                    <a href="#" class="p-3 bg-red-600 rounded-full text-white hover:bg-red-700 transition-colors inline-flex items-center justify-center shadow-lg">
+                        <i class="fab fa-facebook text-lg"></i>
+                    </a>
+                    <a href="#" class="p-3 bg-red-600 rounded-full text-white hover:bg-red-700 transition-colors inline-flex items-center justify-center shadow-lg">
+                        <i class="fab fa-youtube text-lg"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Contact -->
+            <div>
+                <h4 class="text-white font-bold mb-6 text-red-500 text-lg" style="font-family: 'Oswald', sans-serif; letter-spacing: 1px;">CONTATO</h4>
+                <ul class="space-y-3">
+                    <li class="flex items-center gap-2"><i class="fas fa-phone text-red-500"></i> <span class="font-semibold">(11) 9999-9999</span></li>
+                    <li class="flex items-center gap-2"><i class="fas fa-envelope text-red-500"></i> <span class="font-semibold">contato@only.com</span></li>
+                    <li class="flex items-center gap-2"><i class="fas fa-map-marker-alt text-red-500"></i> <span class="font-semibold">São Paulo, SP</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Bottom Footer -->
+        <div class="border-t border-red-600 border-opacity-30 pt-8 text-center text-sm text-gray-500 font-semibold">
+            <p>&copy; 2025 Only Cars Club. Todos os direitos reservados. 🏁</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Carousel functionality
+        class Carousel {
+            constructor(container) {
+                this.container = container;
+                this.currentIndex = 0;
+                this.items = this.container.querySelectorAll('.carousel-item');
+                this.dots = this.container.querySelectorAll('.carousel-dot');
+                this.track = this.container.querySelector('.carousel-track');
+                this.prevBtn = this.container.querySelector('.carousel-btn-prev');
+                this.nextBtn = this.container.querySelector('.carousel-btn-next');
+                
+                if (this.prevBtn) this.prevBtn.addEventListener('click', () => this.prev());
+                if (this.nextBtn) this.nextBtn.addEventListener('click', () => this.next());
+                
+                this.dots.forEach(dot => {
+                    dot.addEventListener('click', (e) => {
+                        this.goToSlide(parseInt(e.target.dataset.index));
+                    });
+                });
+            }
+
+            updateCarousel() {
+                // Move o track para mostrar a imagem atual
+                const offset = -this.currentIndex * 100;
+                this.track.style.transform = `translateX(${offset}%)`;
+                
+                // Atualiza os dots
+                this.dots.forEach((dot, index) => {
+                    dot.classList.remove('active');
+                    if (index === this.currentIndex) {
+                        dot.classList.add('active');
+                    }
+                });
+            }
+
+            next() {
+                this.currentIndex = (this.currentIndex + 1) % this.items.length;
+                this.updateCarousel();
+            }
+
+            prev() {
+                this.currentIndex = (this.currentIndex - 1 + this.items.length) % this.items.length;
+                this.updateCarousel();
+            }
+
+            goToSlide(index) {
+                this.currentIndex = index;
+                this.updateCarousel();
+            }
+        }
+
+        // Initialize all carousels
+        document.addEventListener('DOMContentLoaded', () => {
+            const carouselContainers = document.querySelectorAll('[data-carousel-id]');
+            carouselContainers.forEach(container => {
+                new Carousel(container);
+            });
+        });
+    </script>
+</body>
+</html>

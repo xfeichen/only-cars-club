@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Only Cars Club</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="antialiased bg-slate-950">
+    <header class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border-b-4 border-red-600 sticky top-0 z-50 shadow-2xl">
+        <div class="max-w-7xl mx-auto px-4 py-5">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center gap-3">
+                    <img src="images/logo-only.png" alt="ONLY CARS CLUB" class="h-14 w-auto object-contain transition-transform hover:scale-105 drop-shadow-lg">
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex gap-2 items-center">
+                    <a href="index.html" class="nav-link px-4 py-2 rounded-lg text-gray-300 hover:bg-red-600 flex items-center gap-2 transition-all font-bold">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    <a href="sobre.html" class="nav-link px-4 py-2 rounded-lg text-gray-300 hover:bg-red-600 flex items-center gap-2 transition-all font-bold">
+                        <i class="fas fa-users"></i>
+                        <span>Sobre Nós</span>
+                    </a>
+                    <a href="parceiros.html" class="nav-link px-4 py-2 rounded-lg text-gray-300 hover:bg-red-600 flex items-center gap-2 transition-all font-bold">
+                        <i class="fas fa-handshake"></i>
+                        <span>Parceiros</span>
+                    </a>
+                    <a href="eventos.html" class="nav-link px-4 py-2 rounded-lg text-gray-300 hover:bg-red-600 flex items-center gap-2 transition-all font-bold">
+                        <i class="fas fa-calendar-days"></i>
+                        <span>Eventos</span>
+                    </a>
+                    <a href="contato.html" class="nav-link px-4 py-2 rounded-lg bg-red-600 text-white flex items-center gap-2 transition-all font-bold">
+                        <i class="fas fa-headset"></i>
+                        <span>Contato</span>
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-red-500 text-2xl" id="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative bg-cover bg-center min-h-96 flex items-center justify-center text-white overflow-hidden">
+            <div class="absolute inset-0">
+                <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-transparent to-slate-900 opacity-90"></div>
+                <img src="https://source.unsplash.com/1600x600/?car-headlights,dark-road" alt="Contato" class="w-full h-full object-cover filter brightness-50">
+            </div>
+            <div class="relative z-10 text-center fade-in px-4">
+                <h1 class="text-6xl md:text-7xl font-black mb-4" style="font-family: 'Oswald', sans-serif; letter-spacing: 3px;">
+                    CONTATO
+                </h1>
+                <div class="w-24 h-1 bg-gradient-to-r from-transparent via-red-600 to-transparent mx-auto mb-6"></div>
+                <p class="text-2xl font-semibold text-gray-200">Estamos aqui para ouvir você!</p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="py-32 px-4 md:px-8 max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <!-- Contact Info -->
+                <div class="fade-in">
+                    <h2 class="section-title text-5xl md:text-6xl mb-8" style="font-family: 'Oswald', sans-serif; letter-spacing: 2px;">COMUNIQUE-SE</h2>
+                    <div class="divider mb-12"></div>
+
+                    <!-- WhatsApp Card -->
+                    <div class="card-hover-effect md-card mb-8 scale-in">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="p-4 bg-gradient-to-br from-green-600 to-green-800 rounded-full">
+                                <i class="fab fa-whatsapp text-3xl text-white"></i>
+                            </div>
+                            <h3 class="text-2xl font-black text-green-400" style="font-family: 'Oswald', sans-serif;">WHATSAPP</h3>
+                        </div>
+                        <p class="text-gray-400 mb-6 font-semibold">Contato direto e rápido com nosso time!</p>
+                        <a href="https://chat.whatsapp.com/Da79r4k9ZhcBXBv0TxAGNg" target="_blank" class="btn-primary inline-flex items-center gap-2 px-8 py-3 bg-green-600 text-white rounded-lg font-bold hover:bg-green-700 transition-all">
+                            <i class="fab fa-whatsapp"></i>
+                            Enviar Mensagem
+                        </a>
+                    </div>
+
+                    <!-- Phone Card -->
+                    <div class="card-hover-effect md-card mb-8 scale-in">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="p-4 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full">
+                                <i class="fas fa-phone-alt text-3xl text-white"></i>
+                            </div>
+                            <h3 class="text-2xl font-black text-blue-400" style="font-family: 'Oswald', sans-serif;">TELEFONE</h3>
+                        </div>
+                        <p class="text-gray-300 text-xl font-bold">(11) 97684-2147</p>
+                        <p class="text-gray-400 mt-2 font-semibold">Seg-Dom • 10:00 - 20:00</p>
+                    </div>
+
+                    <!-- Social Card -->
+                    <div class="card-hover-effect md-card scale-in">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="p-4 bg-gradient-to-br from-red-600 to-red-800 rounded-full">
+                                <i class="fas fa-share-alt text-3xl text-white"></i>
+                            </div>
+                            <h3 class="text-2xl font-black text-red-400" style="font-family: 'Oswald', sans-serif;">REDES SOCIAIS</h3>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="https://www.instagram.com/onlycars.club/" target="_blank" class="p-4 bg-red-600 rounded-full text-white hover:bg-red-700 transition-colors inline-flex items-center justify-center shadow-lg text-2xl">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="p-4 bg-red-600 rounded-full text-white hover:bg-red-700 transition-colors inline-flex items-center justify-center shadow-lg text-2xl">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="#" class="p-4 bg-red-600 rounded-full text-white hover:bg-red-700 transition-colors inline-flex items-center justify-center shadow-lg text-2xl">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Location Card -->
+                <div class="scale-in">
+                    <h2 class="section-title text-5xl md:text-6xl mb-8" style="font-family: 'Oswald', sans-serif; letter-spacing: 2px;">NOSSA FAMILIA</h2>
+                    <div class="divider mb-12"></div>
+                    
+                    <div class="card-hover-effect md-card p-0 overflow-hidden mb-8">
+                        <div class="relative">
+                            <img src="https://source.unsplash.com/600x400/?car-meetup,night,street" alt="Encontro de Carros" class="w-full h-64 object-cover filter brightness-75">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                            <div class="absolute bottom-6 left-6">
+                                <h3 class="text-2xl font-black text-white mb-2" style="font-family: 'Oswald', sans-serif;">SEMPRE EM MOVIMENTO</h3>
+                                <p class="text-gray-200 font-semibold">Estamos por São Paulo, prontos para acelerar!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="text-lg text-gray-300 mb-6 font-semibold">
+                        Nossa comunidade está sempre em movimento! Não temos ponto fixo, mas estamos presentes em todos os cantos de SP, criando momentos memoráveis.
+                    </p>
+                    <p class="text-lg text-gray-300 mb-8 font-semibold">
+                        Acompanhe nossas redes sociais para conhecer o local do próximo <span class="text-red-500 font-black">EVENTO</span>!
+                    </p>
+
+                    <a href="eventos.html" class="btn-primary inline-flex items-center gap-2 px-8 py-4 bg-red-600 text-white rounded-lg font-bold hover:bg-red-700 transition-all text-lg">
+                        <i class="fas fa-calendar-days"></i>
+                        Ver Próximos Eventos
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Final -->
+        <section class="py-32 px-4 md:px-8 bg-gradient-to-r from-red-900 via-red-800 to-red-900 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent opacity-50"></div>
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-5xl md:text-6xl font-black text-white mb-8" style="font-family: 'Oswald', sans-serif; letter-spacing: 2px;">
+                    PRONTO PRA CONHECER?
+                </h2>
+                <p class="text-2xl text-gray-100 mb-12 font-semibold">
+                    Envie uma mensagem agora e faça parte da Only Cars Club. Sua próxima aceleração começa aqui!
+                </p>
+                <a href="https://chat.whatsapp.com/Da79r4k9ZhcBXBv0TxAGNg" target="_blank" class="btn-primary inline-flex items-center justify-center gap-3 px-14 py-6 bg-white text-red-600 rounded-2xl text-2xl font-black hover:bg-gray-100 shadow-2xl">
+                    <i class="fab fa-whatsapp"></i>
+                    Chamar no WhatsApp
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border-t-4 border-red-600 text-gray-400 py-20 px-4 md:px-8">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+            <!-- Logo Column -->
+            <div class="text-center md:text-left">
+                <img src="images/logo-only.png" alt="ONLY CARS CLUB" class="h-16 w-auto mb-4 mx-auto md:mx-0">
+                <p class="text-sm text-gray-500">A comunidade dos verdadeiros apaixonados por automóveis.</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h4 class="text-white font-bold mb-6 text-red-500 text-lg" style="font-family: 'Oswald', sans-serif; letter-spacing: 1px;">NAVEGAÇÃO</h4>
+                <ul class="space-y-3">
+                    <li><a href="index.html" class="hover:text-red-500 transition-colors font-semibold">Home</a></li>
+                    <li><a href="sobre.html" class="hover:text-red-500 transition-colors font-semibold">Sobre Nós</a></li>
+                    <li><a href="parceiros.html" class="hover:text-red-500 transition-colors font-semibold">Parceiros</a></li>
+                    <li><a href="eventos.html" class="hover:text-red-500 transition-colors font-semibold">Eventos</a></li>
+                </ul>
+            </div>
+
+            <!-- Social Links -->
+            <div>
+                <h4 class="text-white font-bold mb-6 text-red-500 text-lg" style="font-family: 'Oswald', sans-serif; letter-spacing: 1px;">CONECTE-SE</h4>
+                <div class="flex gap-4">
+                    <a href="https://www.instagram.com/onlycars.club/" target="_blank" class="p-3 bg-red-600 rounded-full text-white hover:bg-red-700 transition-colors inline-flex items-center justify-center shadow-lg">
+                        <i class="fab fa-instagram text-lg"></i>
+                    </a>
+                    <a href="#" class="p-3 bg-red-600 rounded-full text-white hover:bg-red-700 transition-colors inline-flex items-center justify-center shadow-lg">
+                        <i class="fab fa-facebook text-lg"></i>
+                    </a>
+                    <a href="#" class="p-3 bg-red-600 rounded-full text-white hover:bg-red-700 transition-colors inline-flex items-center justify-center shadow-lg">
+                        <i class="fab fa-youtube text-lg"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Contact -->
+            <div>
+                <h4 class="text-white font-bold mb-6 text-red-500 text-lg" style="font-family: 'Oswald', sans-serif; letter-spacing: 1px;">CONTATO</h4>
+                <ul class="space-y-3">
+                    <li class="flex items-center gap-2"><i class="fas fa-phone text-red-500"></i> <span class="font-semibold">(11) 97684-2147</span></li>
+                    <li class="flex items-center gap-2"><i class="fab fa-whatsapp text-red-500"></i> <span class="font-semibold">WhatsApp</span></li>
+                    <li class="flex items-center gap-2"><i class="fas fa-map-marker-alt text-red-500"></i> <span class="font-semibold">São Paulo, SP</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Bottom Footer -->
+        <div class="border-t border-red-600 border-opacity-30 pt-8 text-center text-sm text-gray-500 font-semibold">
+            <p>&copy; 2025 Only Cars Club. Todos os direitos reservados. 🏁</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
